@@ -1,0 +1,25 @@
+/* Milk-blue watercolor recipe stationery matched to the home video. */
+:root{--ink:#637184;--muted:#95a0aa;--paper:#fffdf7;--line:#dce5ed}
+body{background:#f9f8f3;color:var(--ink)}main{max-width:850px}
+.note-friends{display:block;width:min(100%,350px);height:auto;margin:0 auto 5px;mix-blend-mode:multiply}
+.heading{padding:8px 0 28px}.heading h1{color:#60738e;font-size:32px;margin:5px 0 8px}
+.tiny{letter-spacing:.16em;color:#94a4b5}.sheet{background:#fffdf7;border:1px solid #dce5ed;border-radius:9px 20px 12px 18px;padding:27px;box-shadow:none}
+.tape{background:#d9e5f1;opacity:.6;width:78px;height:20px;top:-9px}
+.ingredients{gap:10px}.food-note{border-radius:12px;background:#f5f8fa}.food-note:hover{background:#edf3f8}.food-note.checked:after{background:#a4b8cd}
+.notes{grid-template-columns:1fr;gap:20px}.note,.note:nth-child(3n+2),.note:nth-child(3n){background:#f4f7fb;border:1px solid #dce5ef;border-radius:5px 15px 10px 12px;transform:none;box-shadow:none}
+.note:nth-child(3n+2){background:#fffaf1}.note:nth-child(3n){background:#f5f3f7}.note:before{width:54px;height:15px;top:-7px;background:#d6e2ef;opacity:.45}
+.note>summary{padding:20px 24px;min-height:76px}.summary-text{font:23px/1.6 "STKaiti","KaiTi",serif;color:#61778e}.num{color:#97abc1}.note-body{padding:0 24px 24px}.instruction{line-height:2.1;font-size:14px}.mini-art{padding:8px 0}
+.done{background:#fffdfa;border-color:#cbd9e6;color:#6e8299;border-radius:20px}.aside{background:#f8fafc;border:1px solid #e0e7ee;border-radius:13px}.evidence{color:#8d9aa5}.steps-head h2,.sheet h2{color:#6c8197}
+button{background:#f5f8fb;border-color:#d8e3ed}button:hover{background:#e8f0f7}
+@media(max-width:620px){.note-friends{max-width:280px}.heading h1{font-size:28px}.sheet{padding:22px 12px}.summary-text{font-size:21px}.note>summary{padding:18px}.note-body{padding:0 18px 20px}}
+@media print{.note-friends{width:200px}.notes{display:block}.note{break-inside:avoid}}
+
+/* A continuous illustrated cooking map; no collapsible steps. */
+main{max-width:760px}.note-friends{max-width:240px}.heading{padding-bottom:24px}.sheet{border:0;background:transparent;padding:18px 0}.tape{display:none}.ingredients{display:flex;justify-content:center;flex-wrap:wrap;gap:18px 12px}.food-note,.food-note:hover{background:transparent;border:0;border-radius:0;box-shadow:none;width:120px;padding:0}.food-note svg{width:115px;height:105px}.food-note span{font-size:13px;color:#60758a}.food-note.checked:after{background:#9db5c9}
+.notes{display:flex;flex-direction:column;gap:0;padding:0 10px}.note,.note:nth-child(3n+2),.note:nth-child(3n){width:76%;align-self:flex-start;border:0;background:transparent;border-radius:0;box-shadow:none;transform:none}.note:nth-of-type(even){align-self:flex-end}.note:before{display:none}.step-heading{display:flex;gap:12px;align-items:center;padding:12px 0}.summary-text{font-size:23px;line-height:1.5}.num{font-size:30px;color:#9bb2c6}.note-body{padding:0;animation:none}.mini-art{justify-content:flex-start;padding:0}.mini-art svg{width:190px;height:130px}.instruction{font-size:14px;line-height:1.95;margin:10px 0 16px}.done{width:auto;font-size:11px;padding:6px 12px;background:#eaf1f680;border-style:solid}.stamp{font-size:10px}.route-connector{height:64px;width:52%;align-self:center}.route-connector svg{display:block;width:100%;height:100%}.route-connector:nth-child(4n){transform:scaleX(-1)}.notes .finished .summary-text{text-decoration:line-through;opacity:.55}.steps-head{margin-top:26px}.aside{background:#ffffff60}.legend{font-size:10px;color:#8b9aaa}
+@media(max-width:620px){main{padding:0 18px 40px}.heading h1{font-size:27px}.ingredients{gap:15px 5px}.food-note{width:94px}.food-note svg{width:90px;height:85px}.notes{padding:0}.note,.note:nth-child(3n+2),.note:nth-child(3n){width:87%}.summary-text{font-size:21px}.mini-art svg{width:160px;height:120px}.route-connector{height:56px}.note-friends{max-width:190px}}
+@media print{.notes{display:flex}.note{break-inside:avoid}.route-connector{break-inside:avoid}.done{display:none}}
+
+#progress,.stamp,.done,.heading>.tiny,.heading>p,.legend{display:none}.ingredient-text{padding:5px 10px;font-size:14px;color:#60758a}.note-body .instruction{margin:0;font-size:16px}.note{display:flex;gap:12px}.step-heading{align-self:flex-start;padding:0}.route-connector{height:42px}.recipe-specific-art{display:block;width:100%;max-width:520px;margin:20px auto;}
+
+.illustrated-map{position:relative}.illustrated-map>img{display:block;width:100%}.map-caption{position:absolute;transform:translate(-50%,0);max-width:42%;text-align:center;font-size:clamp(11px,2.8vw,17px);line-height:1.5;background:#fcfaf6e8;padding:2px 5px;color:#526b78}

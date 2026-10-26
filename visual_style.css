@@ -1,0 +1,20 @@
+/* Shared quiet pen-and-wash direction. No simulated grain, sharpening or distortion. */
+body{background:#faf9f5;background-image:none;color:#554f46}
+.sheet,.paper{background:#fffefa;border-color:#e8e3d8;box-shadow:none;transform:none}
+.portal{background:#fafbf6;border-color:#e3e7da;box-shadow:none;transform:none}
+.portal:nth-of-type(2){background:#fcf8f2;border-color:#e8e2d9;transform:none}
+.note,.recipe-strip{background:#fcf9f1;border-color:#e8e2d7;box-shadow:none;transform:none}
+.note:nth-child(3n+2),.recipe-strip:nth-child(even){background:#f7f9f2;border-color:#e1e6da;transform:none}
+.note:nth-child(3n){background:#fcf7f3;border-color:#eae1da;transform:none}
+.note[open]{box-shadow:none}
+.tape,.portal:before,.paper:before{background:#dce3d0;opacity:.42}
+.note:before{background:#e6dac5;opacity:.4}
+.watercolor-art{filter:none!important;opacity:1!important;image-rendering:auto}
+.food-note:hover svg{transform:none}
+.portal:hover{transform:none!important}
+.heading h1,.intro h1{color:#4e483f}
+.instruction{line-height:2}.summary-text{font-size:21px}
+.note-body{animation:none}
+
+/* Milk-blue notes, matching the current Japanese pastel mascot. */
+body{color:#52616a}.note,.recipe-strip{background:#f2f7fa;border-color:#dce8ef}.note:nth-child(3n+2),.recipe-strip:nth-child(even){background:#edf4f8;border-color:#dce8ef}.note:nth-child(3n){background:#f7f8fa;border-color:#e2e8ef}.tape,.note:before{background:#d5e5ef}.heading h1,.intro h1{color:#536a79}button:hover{background:#e7f0f6}

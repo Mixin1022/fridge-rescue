@@ -1,0 +1,67 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>料理便签</title><style>
+*{box-sizing:border-box}body{margin:0;background:#fcfaf6;color:#526b78;font-family:"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:760px;margin:auto;padding:calc(18px + env(safe-area-inset-top)) 0 calc(28px + env(safe-area-inset-bottom))}h1{text-align:center;font:500 26px/1.5 "STKaiti","KaiTi",serif;margin:12px 20px 24px}.illustrated-map{position:relative}.illustrated-map>img{display:block;width:100%;height:auto}.map-caption{position:absolute;transform:translate(-50%,0);width:42%;text-align:center;font-size:clamp(11px,2.8vw,17px);line-height:1.55;background:#fcfaf6ed;padding:3px 5px;border-radius:4px;overflow-wrap:anywhere}.ingredient-name,.ingredient-amount{display:block}.ingredient-amount{font-size:.9em;color:#6a7f8c}.notice{margin:30px 22px;padding:22px;border:1px solid #dce5e9;border-radius:20px;background:#ffffff80;line-height:1.8}.notice h2{font-size:18px;font-weight:500}.notice p{margin:12px 0}.review-list{margin:20px 22px;font-size:14px;line-height:1.8}@media print{main{padding:0}.map-caption{font-size:12px}}
+.material-atlas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 10px;padding:0 18px 28px}.material-tile,.action-tile{min-width:0;margin:0;background:transparent}.tile-art{display:block;width:100%;height:auto;aspect-ratio:1;overflow:hidden}.tile-caption{text-align:center;line-height:1.65;margin:4px 0;font-size:14px;overflow-wrap:anywhere}.action-route{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:46px 38px;margin:10px 20px 24px}.action-tile{position:relative;z-index:1}.action-tile .tile-caption{text-align:left}.route-arrows{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}.uncertain-art{display:grid;place-items:center;aspect-ratio:1;color:#91aabc;font:40px Georgia,serif}.material-tile .tile-caption{font-size:13px}@media(min-width:620px){.material-atlas{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}.action-route{gap:54px 58px;margin:10px 32px 30px}.tile-caption{font-size:17px}}@media print{.action-tile{break-inside:avoid}}
+.section-divider{display:flex;align-items:center;gap:16px;margin:12px 30px 36px;color:#91a6af;font:16px "KaiTi",serif;letter-spacing:3px}.section-divider::before,.section-divider::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#bccbd2)}.section-divider::after{transform:rotate(180deg)}
+</style></head><body><main id="note"></main><script id="recipe-data" type="application/json">__RECIPE_DATA__</script><script>
+'use strict';
+function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n}
+function art(type){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'),atlas='__WATERCOLOR_ATLAS__',regions={tomato:[0,0,609,430],green:[609,0,609,430],bread:[35,425,415,340],garlic:[425,495,180,265],cut:[609,430,609,430],blend:[0,860,609,431],bowl:[609,860,609,431]};svg.setAttribute('class','watercolor-art');svg.setAttribute('aria-hidden','true');if(atlas&&regions[type]){const rect=regions[type],image=document.createElementNS('http://www.w3.org/2000/svg','image');svg.setAttribute('viewBox',rect.join(' '));image.setAttribute('href',atlas);image.setAttribute('width','1218');image.setAttribute('height','1291');svg.append(image)}else{svg.setAttribute('viewBox','0 0 145 110');const paths={bottle:'M60 18h24v23q14 10 14 22v28H45V64q0-13 15-23Z M60 25h24 M49 63h45',sieve:'M23 38q42 49 88 0 M23 38h88 M36 46h60 M47 54h37 M55 40v19 M69 40v25 M84 40v18 M112 39l22-7 M35 75q38 35 72 0',season:'M43 57q30 42 59 0 M43 57h59 M70 23l12 21 M91 36l-4 6'};svg.innerHTML='<path d="'+(paths[type]||'M29 48h87q-8 42-43 42Q38 87 29 48Z')+'" fill="#f4edda" stroke="#625b50" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>'}return svg}
+function foodType(t){if(/番茄/.test(t))return 'tomato';if(/黄瓜|青椒|蔬菜/.test(t))return 'green';if(/面包/.test(t))return 'bread';if(/蒜/.test(t))return 'garlic';if(/油|醋|酱油/.test(t))return 'bottle';return 'bowl'}
+let routeObserver;
+function show(data){
+ if(routeObserver)routeObserver.disconnect();
+ const root=document.getElementById('note');root.replaceChildren();
+ const model=data?.deepseek;
+ const title=model?.title||data?.title||'料理便签';root.append(node('h1',title));document.title=title+' · 料理便签';
+ function notice(heading,text){const n=node('section',undefined,'notice');n.append(node('h2',heading),node('p',text));root.append(n)}
+ if(data?.analysis_status!=='deepseek'||!model||!Array.isArray(model.ingredients)||!model.ingredients.length||!Array.isArray(model.steps)||!model.steps.length){notice('文字尚未整理完成','请重新识别。未通过 DeepSeek 整理的内容不会作为完整食谱展示。');return}
+ if(data.note_status==='insufficient'){notice('内容不足','缺少足够的材料或步骤，不能补造完整食谱。');return}
+ if(data.note_status==='needs_confirmation')notice('含待确认项','问号表示原文仍有疑问，插图不会替你猜测。可以选择收录或报错。');
+ const layout=data.art_layout;
+ if(layout?.mode==='tiles-v1'){
+   const canvas=layout.canvas;
+   const validTiles=canvas&&Number.isFinite(canvas.width)&&Number.isFinite(canvas.height)&&['ingredients','steps'].every(key=>Array.isArray(layout[key])&&layout[key].length===model[key].length&&layout[key].every(p=>p&&['x','y','w','h'].every(a=>Number.isFinite(p[a]))&&p.x>=0&&p.y>=0&&p.w>0&&p.h>0&&p.x+p.w<=1.00001&&p.y+p.h<=1.00001));
+   if(!validTiles||!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(data.recipe_art||'')){notice('插图素材尚未就绪','本次素材或布局不完整，可以从绘图阶段继续。');return}
+   const ns='http://www.w3.org/2000/svg';
+   function tile(key,item,i){
+     const card=node('article',undefined,key==='ingredients'?'material-tile':'action-tile');
+     const mask=(data.art_masks||[]).find(m=>m.field===key&&m.index===i);
+     if(item.question_notes?.length||mask){card.append(node('div','？','uncertain-art'))}
+     else{const p=layout[key][i],svg=document.createElementNS(ns,'svg'),img=document.createElementNS(ns,'image');svg.setAttribute('viewBox',[p.x*canvas.width,p.y*canvas.height,p.w*canvas.width,p.h*canvas.height].join(' '));svg.setAttribute('class','tile-art');svg.setAttribute('role','img');svg.setAttribute('aria-label',item.name||item.text||'料理插图');img.setAttribute('href',data.recipe_art);img.setAttribute('width',canvas.width);img.setAttribute('height',canvas.height);svg.append(img);card.append(svg)}
+     const caption=node('p',undefined,'tile-caption');
+     if(key==='ingredients'){caption.append(node('span',(item.quantity?item.name:item.text)||item.name||'','ingredient-name'));if(item.quantity)caption.append(node('span',item.quantity,'ingredient-amount'))}
+     else caption.textContent=(i+1)+'. '+(item.text||item.instruction||'');
+     if(item.question_notes?.length||mask)caption.append(node('span',mask?'？插图待确认':'？待确认','ingredient-amount'));card.append(caption);return card;
+   }
+   const materials=node('section',undefined,'material-atlas');model.ingredients.forEach((item,i)=>materials.append(tile('ingredients',item,i)));root.append(materials);root.append(node("div","料理步骤","section-divider"));
+   const route=node('section',undefined,'action-route');const cards=[];
+   model.steps.forEach((item,i)=>{const card=tile('steps',item,i),row=Math.floor(i/2),col=i%2;card.style.gridRow=row+1;card.style.gridColumn=row%2===0?col+1:2-col;cards.push(card);route.append(card)});root.append(route);
+   function drawRoute(){
+     route.querySelector('.route-arrows')?.remove();const box=route.getBoundingClientRect();if(!box.width)return;
+     const svg=document.createElementNS(ns,'svg');svg.setAttribute('class','route-arrows');svg.setAttribute('viewBox','0 0 '+box.width+' '+box.height);svg.setAttribute('aria-hidden','true');
+     const defs=document.createElementNS(ns,'defs'),marker=document.createElementNS(ns,'marker'),head=document.createElementNS(ns,'path');marker.setAttribute('id','route-head');marker.setAttribute('viewBox','0 0 10 10');marker.setAttribute('refX','8');marker.setAttribute('refY','5');marker.setAttribute('markerWidth','7');marker.setAttribute('markerHeight','7');marker.setAttribute('orient','auto');head.setAttribute('d','M1 1 L8 5 L1 9');head.setAttribute('fill','none');head.setAttribute('stroke','#92aabd');head.setAttribute('stroke-width','1.4');marker.append(head);defs.append(marker);svg.append(defs);
+     for(let i=0;i<cards.length-1;i++){const a=cards[i].getBoundingClientRect(),b=cards[i+1].getBoundingClientRect();let d;if(Math.floor(i/2)===Math.floor((i+1)/2)){const right=b.left>a.left;const x1=(right?a.right:a.left)-box.left,x2=(right?b.left:b.right)-box.left,y1=Math.min(a.height,b.height)*.45+a.top-box.top;d=`M ${x1} ${y1} C ${(x1+x2)/2} ${y1-12}, ${(x1+x2)/2} ${y1+12}, ${x2} ${y1}`}
+       else{const x=(a.left+a.right)/2-box.left,y1=a.bottom-box.top+3,y2=b.top-box.top-5;d=`M ${x} ${y1} C ${x+18} ${(y1+y2)/2}, ${x-18} ${(y1+y2)/2}, ${x} ${y2}`}
+       const path=document.createElementNS(ns,'path');path.setAttribute('d',d);path.setAttribute('fill','none');path.setAttribute('stroke','#92aabd');path.setAttribute('stroke-width','1.5');path.setAttribute('stroke-linecap','round');path.setAttribute('marker-end','url(#route-head)');svg.append(path)}route.prepend(svg);
+   }
+   requestAnimationFrame(drawRoute);if(typeof ResizeObserver!=='undefined'){routeObserver=new ResizeObserver(drawRoute);routeObserver.observe(route)}
+   for(const key of ['ingredients','steps'])model[key].forEach((item,i)=>{for(const text of item.question_notes||[])root.append(node('p',(key==='ingredients'?'材料':'步骤')+' '+(i+1)+'？ '+text,'review-list'))});
+   for(const text of data.note_warnings||[])root.append(node('p','？ '+text,'review-list'));
+   for(const mask of data.art_masks||[])root.append(node('p',(mask.field==='ingredients'?'材料':'步骤')+' '+(mask.index+1)+' 插图？ '+mask.text,'review-list'));
+   return;
+ }
+ const valid=layout&&['ingredients','steps'].every(key=>Array.isArray(layout[key])&&layout[key].length===model[key].length&&layout[key].every(p=>p&&['x','y'].every(axis=>Number.isFinite(p[axis])&&p[axis]>=0&&p[axis]<=1)));
+ if(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(data.recipe_art||'')||!valid){notice('便签插画尚未就绪','需要 D 盘后台返回本次食谱的 Codex 插画和完整注释位置。不会用旧食材图或缺失步骤的排版代替。');return}
+ const map=node('div',undefined,'illustrated-map');const img=node('img');img.src=data.recipe_art;img.alt=title+'：食材立绘与完整步骤路线';map.append(img);
+ for(const key of ['ingredients','steps'])model[key].forEach((item,i)=>{
+   const label=node('span',undefined,'map-caption');const pos=layout[key][i];label.style.left=(pos.x*100)+'%';label.style.top=(pos.y*100)+'%';
+   if(key==='ingredients'&&typeof item.name==='string'&&item.name.trim()){label.append(node('span',item.name,'ingredient-name'));if(typeof item.quantity==='string'&&item.quantity.trim())label.append(node('span',item.quantity,'ingredient-amount'))}
+   else label.textContent=(key==='steps'?(i+1)+'. ':'')+(item.text||'');
+   if(item.question_notes?.length)label.append(node('span','？待确认','ingredient-amount'));
+   map.append(label);
+ });root.append(map);
+ for(const key of ['ingredients','steps'])model[key].forEach((item,i)=>{for(const text of item.question_notes||[])root.append(node('p',(key==='ingredients'?'材料':'步骤')+' '+(i+1)+'？ '+text,'review-list'))});
+ for(const text of data.note_warnings||[])root.append(node('p','？ '+text,'review-list'));
+}
+try{show(JSON.parse(document.getElementById('recipe-data').textContent))}catch(e){document.getElementById('note').replaceChildren(node('p','便签数据无法读取，请重新识别。','notice'))}
+</script></body></html>

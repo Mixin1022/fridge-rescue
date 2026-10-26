@@ -1,0 +1,4 @@
+{
+  "endpoint": "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev/api/backend-address",
+  "write_token": "GENERATE_A_SEPARATE_RANDOM_SECRET"
+}

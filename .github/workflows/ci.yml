@@ -1,0 +1,23 @@
+name: Offline regression
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python scripts/test.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node tests-js/test_autoconnect_motion.cjs
+      - run: node tests-js/test_current_job.cjs
+      - run: node tests-js/test_refresh_race.cjs
+      - run: python build_cloudflare.py
+      - run: python scripts/check_release.py

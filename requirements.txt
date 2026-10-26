@@ -1,0 +1,9 @@
+opencv-python-headless==4.13.0.92
+numpy>=2.0,<3
+Pillow>=10,<13
+rapidocr
+onnxruntime
+faster-whisper>=1.1,<2
+yt-dlp
+playwright>=1.50,<2
+av>=12

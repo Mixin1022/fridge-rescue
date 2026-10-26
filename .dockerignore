@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+work
+.env
+*.zip
+node_modules
+.wrangler
+recipe-library.json
+index.html
+cloudflare-pages
+wrangler-auto-address.json

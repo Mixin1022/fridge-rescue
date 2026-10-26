@@ -1,0 +1,21 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const client=fs.readFileSync('cloud_client.js','utf8');
+(async()=>{
+ const saved=new Map(),session=new Map(),elements={'cloud-token':{value:'private-test-token'},'cloud-url':{value:'https://old.trycloudflare.com'},'cloud-status':{}};
+ const ctx={backend:'https://old.trycloudflare.com',connected:false,accessToken:'',currentJobId:'',URL,document:{hidden:false},$:id=>elements[id],refresh:async()=>{},drawLibrary(){},localStorage:{getItem:k=>saved.get(k),setItem:(k,v)=>saved.set(k,v)},sessionStorage:{getItem:k=>session.get(k),setItem:(k,v)=>session.set(k,v)}};
+ vm.createContext(ctx);
+ vm.runInContext(client.slice(client.indexOf('async function connect()'),client.indexOf("  $('cloud-connect').onclick")),ctx);
+ await ctx.connect();assert.equal(saved.get('fridge-service-access-token'),'private-test-token');
+ ctx.fetch=async()=>({ok:true,json:async()=>({url:'https://new.trycloudflare.com'})});ctx.discovering=false;
+ vm.runInContext(client.slice(client.indexOf('async function discoverAndConnect()'),client.indexOf('  discoverAndConnect();')),ctx);
+ await ctx.discoverAndConnect();assert.equal(ctx.backend,'https://new.trycloudflare.com');assert.equal(saved.get('fridge-access-token:https://new.trycloudflare.com'),'private-test-token');
+ ctx.fetch=async()=>({ok:true,json:async()=>({url:'https://evil.example'})});await ctx.discoverAndConnect();assert.equal(ctx.backend,'https://new.trycloudflare.com');
+ const events={},classes=new Set();let src='poster.jpg';
+ const video={muted:false,paused:true,setAttribute(){},classList:{add:c=>classes.add(c),remove:c=>classes.delete(c)},addEventListener:(e,fn)=>events[e]=fn,play:()=>Promise.reject(Error('blocked')),pause(){events.pause?.()}};
+ const fallback={dataset:{motion:'motion.webp'},getAttribute:()=>src,setAttribute:(k,v)=>{src=v}};
+ const doc={hidden:false,getElementById:()=>video,querySelector:()=>fallback,addEventListener(){}};
+ vm.runInNewContext(fs.readFileSync('hero_video.js','utf8'),{document:doc,window:{addEventListener(){}},Promise,setTimeout,clearTimeout});
+ await new Promise(r=>setImmediate(r));assert.equal(src,'motion.webp');events.playing();assert.equal(src,'poster.jpg');assert(classes.has('is-playing'));
+ events.waiting();assert.equal(src,'motion.webp');doc.hidden=true;events.pause();
+ console.log('PASS: persistent credential, changed address reconnect, untrusted address rejected, blocked playback fallback, animation unloaded during video.');
+})().catch(e=>{console.error(e);process.exitCode=1});

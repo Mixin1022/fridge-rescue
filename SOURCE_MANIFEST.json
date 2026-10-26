@@ -1,0 +1,706 @@
+{
+  "format": 1,
+  "description": "Source files only; manifest excludes itself.",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 149,
+      "sha256": "70fdff202590d4bff61cd796caf3e9641ad55c48379ece13efed7546d915dd17"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 234,
+      "sha256": "ee42362e2389fe1482bc864584172d5500c149a2edaaf072aa3c2b46588d2b25"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "bytes": 337,
+      "sha256": "510100a1e20bb90808104e1df2422ae00f4968d3669839031ca6b4c1a41d1b19"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 693,
+      "sha256": "5645f164e6da4839bdc7be594914a9320a18f2187acbc673bd93987fdefdd763"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 362,
+      "sha256": "a730b8b7b6b13686c45c6ad09516c59d0142c79fd7658c43a06aee103edc7759"
+    },
+    {
+      "path": "address_worker.mjs",
+      "bytes": 1446,
+      "sha256": "8ea83248b71ecb1858041a8bb947e22c2e9dc541c582155998874717091e0770"
+    },
+    {
+      "path": "app_template.html",
+      "bytes": 23812,
+      "sha256": "1ed89ebff81df26ce0339c84dfbea3807c5a8b92840326d3117a2524568a163e"
+    },
+    {
+      "path": "art_batches.py",
+      "bytes": 4592,
+      "sha256": "bfc35c86ea4766bc0a5fdac1565c9216d2ea248a23364706e9db3645bcec88b2"
+    },
+    {
+      "path": "assets/art-student-pen-wash-study-v4.png",
+      "bytes": 2291702,
+      "sha256": "ecb4094aed483347a0da8ba389e718918013d839f49f31ad75bb457876bbc066"
+    },
+    {
+      "path": "assets/fluid-pen-wash-prompt.txt",
+      "bytes": 1044,
+      "sha256": "ce563204f0d87b9c662f3abf389f3aea1cad2add21e5730f0ad68bcd04001ae5"
+    },
+    {
+      "path": "assets/fluid-pen-wash-study-v5.png",
+      "bytes": 2141096,
+      "sha256": "8aa04c29923dbef0fc283ba1c05707f2a53bf090e16bd1971a5ada54bd688079"
+    },
+    {
+      "path": "assets/fridge-friends-european-v4.png",
+      "bytes": 1824856,
+      "sha256": "6e2bfcaaa2c2a7341f2273ae41dd81759cc0dacd8cd03e37c27307ca313d47c8"
+    },
+    {
+      "path": "assets/fridge-friends-milkblue-v2.png",
+      "bytes": 1543843,
+      "sha256": "0be9988726371fc01d969fc7ac5e1ff75a9c3915a2ef997b4420cd8f31302b80"
+    },
+    {
+      "path": "assets/fridge-friends-penwash-v3.png",
+      "bytes": 2774036,
+      "sha256": "1d281ca35921368fe586b5cfb7c81d789b9098d0c758d13114e6c2c1bcc547e4"
+    },
+    {
+      "path": "assets/fridge-friends-v1.png",
+      "bytes": 1736398,
+      "sha256": "6792a568ed71921a1ac535f9c87bf790d3499bfc1ec64ce9ff3aaa1ee27ce6f7"
+    },
+    {
+      "path": "assets/fridge-notebook-european-v2.png",
+      "bytes": 1977993,
+      "sha256": "9e6c7805cf44f0b7de1512eb5e57f2bf1f3abf84503bd2d0e644d481cb839615"
+    },
+    {
+      "path": "assets/fridge-notebook-scenes-v1.png",
+      "bytes": 2647676,
+      "sha256": "20367cc0f1e418d24a2aeb985a0aa7fff5404a76e5ec3db2d13e7fd616412685"
+    },
+    {
+      "path": "assets/gazpacho-specific-v1.png",
+      "bytes": 2508686,
+      "sha256": "c86a903860d21954812af9efa5861291f0eb5c54142e5d829b440a4dbf57b714"
+    },
+    {
+      "path": "assets/home-cinematic-clean-v1.png",
+      "bytes": 2485863,
+      "sha256": "b3196f344b7b13bf4cbc19b3061cf883764640a53bd6af1d44c4abb4f6f6417a"
+    },
+    {
+      "path": "assets/home-hero-motion-v1.webp",
+      "bytes": 3064866,
+      "sha256": "991128ddd179ba1cb3b7b9aa422f84cba84e5bd5a5048205477d6feca9d0f484"
+    },
+    {
+      "path": "assets/home-hero-motion-v2.webp",
+      "bytes": 1388430,
+      "sha256": "42679f0bfb2f8b8c9cc8d7351166d0bb5d6cb8ce93c29aa6c86c4a079436dd14"
+    },
+    {
+      "path": "assets/home-hero-poster-v1.jpg",
+      "bytes": 110458,
+      "sha256": "f10f0569e9f6ea2b1967b815ef4e076ad082ce775b742f39ea61c99cb5a85c9c"
+    },
+    {
+      "path": "assets/home-hero-poster-v2.jpg",
+      "bytes": 310025,
+      "sha256": "a4b1e4b5c9eff68992bc74fd304e53d88739a6fd5b79e6f0a2d4be3da35e7caa"
+    },
+    {
+      "path": "assets/home-hero-poster-v3.jpg",
+      "bytes": 222471,
+      "sha256": "b1e66135fe9040836e71a5e3b3e9d257a74622076f7bcde933b19c4939341f03"
+    },
+    {
+      "path": "assets/home-hero-silent-v1.mp4",
+      "bytes": 559111,
+      "sha256": "0f2166342d8d6833f74e268d6c0dd0652614a51c668a0690b4fc85c48f3a58fd"
+    },
+    {
+      "path": "assets/home-hero-silent-v2.mp4",
+      "bytes": 815699,
+      "sha256": "fcdee854be1a25264657456cfb55fc339d0a72b71a19595c551c2bb594dc984f"
+    },
+    {
+      "path": "assets/home-hero-silent-v3.mp4",
+      "bytes": 293216,
+      "sha256": "12647e88f45c3f35f7d44e430fad2bba9ef93fe9cadf3e9ee9fec5f09920ccdd"
+    },
+    {
+      "path": "assets/ingredient-kitchen-approved-v1.png",
+      "bytes": 2856960,
+      "sha256": "5ead3f2de9756bf18e0df479377c6fc2bcd200c82cab9120b34c664eb08ffc05"
+    },
+    {
+      "path": "assets/ingredient-portrait-v3.png",
+      "bytes": 2219705,
+      "sha256": "ed32c435f3bfc4e402dc07cd4b3c6f5ab16ddf1ed0f7337f5fd3090bb8beac64"
+    },
+    {
+      "path": "assets/ingredient-portrait-v4.png",
+      "bytes": 2477591,
+      "sha256": "417096e871ac032f9d59cb5321e897e3c0aecb7773588390b5b5bab6d439d8a5"
+    },
+    {
+      "path": "assets/ingredient-portrait-v5.png",
+      "bytes": 2384580,
+      "sha256": "eaa99cb923841a5a710aa6bf21e624ec2d1daacf5ac58617adea56abdf8d7dbc"
+    },
+    {
+      "path": "assets/ingredient-video-style-v2.png",
+      "bytes": 2499817,
+      "sha256": "69d90a673ddaca4bb1e3905fc39ddaefb3b511be3818f8e5c4836f1bd1fd5bb9"
+    },
+    {
+      "path": "assets/kitchen-motion-source-v1.png",
+      "bytes": 2934234,
+      "sha256": "de129fcc13d9c0711d2c9d869d23e651d87ea845cfe65fb274d1274b0edcdee9"
+    },
+    {
+      "path": "assets/kitchen-watercolor-approved-v1.png",
+      "bytes": 3111146,
+      "sha256": "a5c1a78fb336f30aba906b2573e331293d9e52af19f4b050b140cbce93bf4029"
+    },
+    {
+      "path": "assets/pen-wash-atlas-v3.png",
+      "bytes": 1513538,
+      "sha256": "000cb5190d89e363ea21081b04a1b1a0c70567642fcad1968c4f3407584d4e20"
+    },
+    {
+      "path": "assets/portrait-art-prompts.md",
+      "bytes": 531,
+      "sha256": "30cdd8880ced5c6c5e69487ab9e1230669c7ea28c06dc3d731de17ff1c45b5f9"
+    },
+    {
+      "path": "assets/recipe-kitchen-approved-v1.png",
+      "bytes": 2777717,
+      "sha256": "047a2fa950d838c1fad894b848870f2e1b323e8a2061b8e656893e87b7a161c5"
+    },
+    {
+      "path": "assets/recipe-note-fairies-v1.png",
+      "bytes": 1872925,
+      "sha256": "47a05bfb20189e4960dd143320d63147581ce1b2a023a3ce38025b192a654f75"
+    },
+    {
+      "path": "assets/recipe-portrait-v3.png",
+      "bytes": 2225740,
+      "sha256": "59026f16d5fdc382d750d7c4a68b351856b4330e2d85b7fc4c2be02905145838"
+    },
+    {
+      "path": "assets/recipe-portrait-v4.png",
+      "bytes": 2418852,
+      "sha256": "886b191650fd17d72b7a04f71dab2bfa8b8db8970de60896762c7412a168a945"
+    },
+    {
+      "path": "assets/recipe-video-style-v2.png",
+      "bytes": 2636980,
+      "sha256": "eaa3ca85009f8c0f29f48d955b0c4d2edc84ec255f4bdb2b6c4f5cb74dd1ccb2"
+    },
+    {
+      "path": "assets/watercolor-food-atlas-v1.png",
+      "bytes": 2254376,
+      "sha256": "ce81065f6f608ad9e09b1ccad62de93d2b898cee26e16788742d9913fa5ca9b5"
+    },
+    {
+      "path": "browser_media_download.py",
+      "bytes": 2174,
+      "sha256": "49aff549f557edd28f4cb807bdb82f4b1d70b8b5e717501638c82331abb86c21"
+    },
+    {
+      "path": "browser_video.py",
+      "bytes": 8086,
+      "sha256": "9d0817c79bdea279ffd9913660da80e28ba280aa560fedef58ebecbd07e95005"
+    },
+    {
+      "path": "bubble_flow.css",
+      "bytes": 14907,
+      "sha256": "cee48caa5b48dc181b35ba1672b9367661d1364dc7ec6cfe8476a0232c21349b"
+    },
+    {
+      "path": "build_cloudflare.py",
+      "bytes": 2458,
+      "sha256": "33259de2e8b1303be9d7cc2662ba5303449c328994956ebad25853153b24b38e"
+    },
+    {
+      "path": "build_library.py",
+      "bytes": 4185,
+      "sha256": "cc6d4c0a704cca5f9392883d1967e2d8abe7bc93575bda4d21e2162fa6f42029"
+    },
+    {
+      "path": "cloud_client.js",
+      "bytes": 17036,
+      "sha256": "9ded5ed6aa868d8f07df3aca030d7c6a3a657ae250a1feda6c6d086ed929fb9c"
+    },
+    {
+      "path": "cloud_server.py",
+      "bytes": 10587,
+      "sha256": "7b663126afb579cbeb6aa739c5aa66ec043b0f91ef1e73f10ca62af7b86284aa"
+    },
+    {
+      "path": "cloud_store.py",
+      "bytes": 17542,
+      "sha256": "d4e08b0f0801b375f1c9fb943684f69c8e87c11b39b808e16987b3ebe26fab49"
+    },
+    {
+      "path": "cloud_worker.py",
+      "bytes": 2110,
+      "sha256": "b06acd60b3a52f23fe444e359a94e8e13b23cb3729f8d10eb4fb5020df0ffbec"
+    },
+    {
+      "path": "codex_recipe_art.py",
+      "bytes": 10874,
+      "sha256": "7818b6e6346c0c981458cca7838206ece4d25654d6ac6eeef7c6d01de15a9dca"
+    },
+    {
+      "path": "codex_recipe_text.py",
+      "bytes": 3817,
+      "sha256": "1cbecd723979fa3d36144e57b452b2957b554cef6474afabcdecc9f394f21249"
+    },
+    {
+      "path": "compare_ocr.py",
+      "bytes": 2823,
+      "sha256": "6f06c8853b74b52184f15d85a45b3c06bf3715bb374897b4b62eed809284b261"
+    },
+    {
+      "path": "compose.yaml",
+      "bytes": 184,
+      "sha256": "4341a558a8c0d9b957d5ea95be1febe94b8f57b91a041c024555a5c0183f4ebb"
+    },
+    {
+      "path": "config/address-publisher.example.json",
+      "bytes": 143,
+      "sha256": "b192eec1780d78290c1dc6d2d5cba3f6056bf3432608225f93ca27e18018f3bd"
+    },
+    {
+      "path": "config/deepseek-config.example.json",
+      "bytes": 98,
+      "sha256": "f8915d17b1362b4fd9ad66b9b52908d91cc6d4373d6337d5266ef41782230a42"
+    },
+    {
+      "path": "config/local-config.example.json",
+      "bytes": 128,
+      "sha256": "eb3317c3b16ac4cd428a5c444da62efc069f3450d8f468f098ed033150e24918"
+    },
+    {
+      "path": "content_classifier.py",
+      "bytes": 2752,
+      "sha256": "99eb699529ba0b8ffdedbc8eb993923acb87343c77b187c3aa5630265194dcbe"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 538,
+      "sha256": "86760a855fb763d1c12f1caa27648742d7c25a8f7ed2836a2303752fb228d1ca"
+    },
+    {
+      "path": "deepseek_recipe.py",
+      "bytes": 21199,
+      "sha256": "d6f4f2ac4a7828fa24877119792c07bb548dd3461c31dca6a2367871666170c5"
+    },
+    {
+      "path": "Deploy-Website.cmd",
+      "bytes": 413,
+      "sha256": "31efe68c8931d02f732c0755f4349b4a771352f00d5ff92473e40eb8a3290e30"
+    },
+    {
+      "path": "diagnose_recognition.py",
+      "bytes": 5165,
+      "sha256": "45a020902506770f092c76011ebce2bba47aed9ba071a0d5e8876ad1124d779e"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 601,
+      "sha256": "ec37fd09802334e9525187ad94509d35d7d26b898f9c8abf6ad4d2a14ed18657"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 1629,
+      "sha256": "42bb5641a2f75d621e50138ac8b1054b150e5b3304ce4bed608fead802507a98"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "bytes": 2937,
+      "sha256": "88912281c4fb6303c0d6cb61a9e45da679adba0f8ea77f8c1002dd4fc1b533cc"
+    },
+    {
+      "path": "docs/PRODUCT_FLOW.md",
+      "bytes": 5971,
+      "sha256": "97a30e09d3b47ae77cd4c30d708f77c4d93c0f5ee0daf0e79e973c50b14dbb4f"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "bytes": 1345,
+      "sha256": "b31cc631edfc1cfdca83669c17d060e18bb450c2205cebabf3e176561adea0c1"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 1038,
+      "sha256": "1bf3238a89f18bb46f55ee11757c09e9442cbca086f205a9c5d805dbdcc2470f"
+    },
+    {
+      "path": "extract_frames.py",
+      "bytes": 4731,
+      "sha256": "39fa3ba2b5450d03ee8842374a12363f742991bdb698cdff1e1b55ce6402bb0b"
+    },
+    {
+      "path": "hero_motion.js",
+      "bytes": 4968,
+      "sha256": "46b4a16b4b3aefa627ff6471e8cf102ddab31e1d5100de95a364dcafc6ea6767"
+    },
+    {
+      "path": "hero_video.js",
+      "bytes": 1786,
+      "sha256": "77c52d21f694cfbc0b367a7a6fe6538389c9de8e305f0521619e973a8dbe6372"
+    },
+    {
+      "path": "illustration_assets.py",
+      "bytes": 1096,
+      "sha256": "2e6464ca200f9e90cc837f7bbb3f35d775f04ff59488b395d1ba4a6b62b418d1"
+    },
+    {
+      "path": "Install-Windows.cmd",
+      "bytes": 495,
+      "sha256": "73d114ce0c0e3bb52eb22b54c6c93884dc98f70b11e5f7a57c84bdec8bfbb2ff"
+    },
+    {
+      "path": "LICENSE-NOTICE.md",
+      "bytes": 533,
+      "sha256": "6d1655f78dae67a493cc492c2ba5e8e8900ab14c76f2e594c480259e5f125497"
+    },
+    {
+      "path": "link_recipe.py",
+      "bytes": 4360,
+      "sha256": "255a18826504ebbd414faef50a5964e0a125a265d3f693f047b850bff75a390a"
+    },
+    {
+      "path": "login_platform.py",
+      "bytes": 887,
+      "sha256": "4e771f3cea6aaa92ff51cf98e6c12939fb72f3442f8df71f560b556fba6f3fc3"
+    },
+    {
+      "path": "make_test_video.py",
+      "bytes": 1026,
+      "sha256": "9e693a6061cbc73e244c4f8002e96749fd4091e7a45673f491d6bf6f4614554c"
+    },
+    {
+      "path": "mascot_style.css",
+      "bytes": 6287,
+      "sha256": "34c6499e0883051be0fb610ad59666bbfe1461daca26f274360b08bdb21a8ace"
+    },
+    {
+      "path": "note_link.py",
+      "bytes": 7135,
+      "sha256": "789519eab04f9d3d7c275a38df211e589baa5b0032002d21cba0e7891f15dbd6"
+    },
+    {
+      "path": "ocr_engine.py",
+      "bytes": 642,
+      "sha256": "15bd0315681363835ebd1c7d543ce0658f118f5ab6fbd6d8eeada342297091d2"
+    },
+    {
+      "path": "pc_background.ps1",
+      "bytes": 3639,
+      "sha256": "d9232dbb5b03cc216eccb72dad5e31924cc95390f1e682322b21fcb436cd5591"
+    },
+    {
+      "path": "pipeline_acquisition.py",
+      "bytes": 4739,
+      "sha256": "97b7323951455422913a173da5314bead951505a1c4787fbd6c31ab71cf1a9b5"
+    },
+    {
+      "path": "pipeline_runner.py",
+      "bytes": 10068,
+      "sha256": "abde5b83c7071ae60fe6a46dfc100ef206bede114d1f72928c84a7ce11336fc8"
+    },
+    {
+      "path": "pipeline_state.py",
+      "bytes": 3376,
+      "sha256": "36b51fa3fe567bc056383079774b31f5d2117604bc85d0446167abc87fe31b48"
+    },
+    {
+      "path": "post_recipe.py",
+      "bytes": 2277,
+      "sha256": "3336ef0088a11187c0119c3150f3c3613d16e86f3b2bc8c5caac3fd88f9fc381"
+    },
+    {
+      "path": "publish_address.py",
+      "bytes": 1930,
+      "sha256": "e4b96a9a161f43f95a45879866d132af8919e7a3254ab8bb8f0de530e0b5bd85"
+    },
+    {
+      "path": "pwa/app-icon.svg",
+      "bytes": 463,
+      "sha256": "79427bd6992f72f534bcdb9aaf73619dc56ec9f302b891df9fa3ac76ff1b37ae"
+    },
+    {
+      "path": "pwa/sw.js",
+      "bytes": 829,
+      "sha256": "d09aca43728fbd0ab826da4628db117dd1ef42d0158990a527dfd75e76a8f224"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6915,
+      "sha256": "8072f041a5b7f4f2a6e5a2fd2a593b2b991f3d34228d82dff21aba77969a2355"
+    },
+    {
+      "path": "recipe_art_layout.py",
+      "bytes": 2879,
+      "sha256": "9474639ce0ebec63efa66c93dbf4323341e10a8a4890cbe3107b970762cde6b9"
+    },
+    {
+      "path": "recipe_auto_review.py",
+      "bytes": 5756,
+      "sha256": "79a491967e4a76bc9b95b51eae98e5c98ce79f6b54f91b218e74e32d1011559b"
+    },
+    {
+      "path": "recipe_checks.py",
+      "bytes": 7012,
+      "sha256": "d1cfd26772a910b50e994729c83529c00de91650a9e02d7639a811d328144bf7"
+    },
+    {
+      "path": "recipe_note_status.py",
+      "bytes": 2376,
+      "sha256": "3310ef5b940a4843c21edc31a407f1a491ca895260d9b4aa1a69db81b49c8c52"
+    },
+    {
+      "path": "recipe_note_style.css",
+      "bytes": 4694,
+      "sha256": "876d0ed32daeab11a447c7da385de311333a9f285366d07070fbfad5f7640c7f"
+    },
+    {
+      "path": "recipe_note_template.html",
+      "bytes": 12192,
+      "sha256": "6c7fefd5db494a01c7fd80549dd7a8d267f93aa0f218c17a8e2a9d2e45edcc96"
+    },
+    {
+      "path": "recipe_quality.py",
+      "bytes": 605,
+      "sha256": "76187365c76a8d50bcba4e128ebd9840558c3da86401ca53d22ed2b9a8e21182"
+    },
+    {
+      "path": "recipe_review_cycle.py",
+      "bytes": 2450,
+      "sha256": "ad7dc802c826f4eebf70f8e1e2cb9fdadf0c61e014d25dd5591d20d00569a721"
+    },
+    {
+      "path": "recipe_revision.py",
+      "bytes": 2783,
+      "sha256": "ef990397aff0562142dffa004ae45ee94c34693abeb534e206f8a44d3b909f08"
+    },
+    {
+      "path": "recipe_scope.py",
+      "bytes": 696,
+      "sha256": "1ad455d29f36c51e06b42ef51476a1497ceb9820a0cc920d784352f6e95a8c97"
+    },
+    {
+      "path": "recipe_template.html",
+      "bytes": 12497,
+      "sha256": "cc91cef190b77d56da3ab55c0ae20be45be42b502524f0e250b9e8de689c8b02"
+    },
+    {
+      "path": "render_recipe.py",
+      "bytes": 923,
+      "sha256": "5093be5c1d525328f9a0915a3eb4da339b0afdc9e40c5cbcd83d97a65e96f4e7"
+    },
+    {
+      "path": "requirements-cloud.txt",
+      "bytes": 21,
+      "sha256": "e6e2dfcb6ceb55a4f47bd7d7227393d63fbcbd4a9bbf0ffce22b7464186d9644"
+    },
+    {
+      "path": "requirements-recognition.txt",
+      "bytes": 21,
+      "sha256": "e6e2dfcb6ceb55a4f47bd7d7227393d63fbcbd4a9bbf0ffce22b7464186d9644"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 150,
+      "sha256": "e0fe7d796dbf07d5edb203ba789d57564c95a5e8e4ce2f60faf33800f7dd48fe"
+    },
+    {
+      "path": "run_pc_backend.py",
+      "bytes": 1045,
+      "sha256": "390626c7bf86c60210020a4cad5a1d14d824eb8645410f5ec87e38b5cfded424"
+    },
+    {
+      "path": "sample/demo-recipe.json",
+      "bytes": 256,
+      "sha256": "cdc0fc0e870bfb46ff81897a7dfa06cd7dd4b0f8dbf5b404683c47063a44d84a"
+    },
+    {
+      "path": "scripts/check_release.py",
+      "bytes": 1392,
+      "sha256": "337ae5dc61cac27c76cbe295c4b92e497f4017cdbd5478b3f535cc2aef7f2d03"
+    },
+    {
+      "path": "scripts/test.py",
+      "bytes": 420,
+      "sha256": "3279681cc2d42d2150ca3e5df0b75260fc33e1bf60050725e68e6bcb7698b965"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 836,
+      "sha256": "5df683496f5c25e606b4457370761524e862190c88243739b82559f8c396b19c"
+    },
+    {
+      "path": "setup_local.py",
+      "bytes": 642,
+      "sha256": "96ee27e1d3e650a0f4c2370e28323861bd71da7d5febc8b26f76ea94b2e82c50"
+    },
+    {
+      "path": "Start-Background.cmd",
+      "bytes": 133,
+      "sha256": "12b74da6054db387855eb5c99c25e266596fa30b26f50b0dfdfb6e017b4b451d"
+    },
+    {
+      "path": "Stop-Background.cmd",
+      "bytes": 132,
+      "sha256": "bf2f30a8693e1bb3703421191f6437f9cc4522ac65455aa2a735131467fc40a6"
+    },
+    {
+      "path": "test_auto_review.py",
+      "bytes": 2725,
+      "sha256": "8145a1b903c87e1ab61889ddfb04e6f4b61ebfc0bd7d1126d7bc254ee6ac2cd8"
+    },
+    {
+      "path": "test_browser_media_download.py",
+      "bytes": 1699,
+      "sha256": "ce9c58c12d6ea3c5dbfa1424977ff5fb6c38014e1ccccc7d608e3568897c6fad"
+    },
+    {
+      "path": "test_browser_video.py",
+      "bytes": 4339,
+      "sha256": "ace0d9de32f7ffcb830702ee4f765384501ff633fb3ef57392252e06e55a117c"
+    },
+    {
+      "path": "test_build_library.py",
+      "bytes": 1147,
+      "sha256": "d7568499d23d6f6d483dfe04999fd04ae563adfd367df7acb48188f447b8baa1"
+    },
+    {
+      "path": "test_cloud.py",
+      "bytes": 6531,
+      "sha256": "1c71e8774c4a7c5827268b48e860f0bc22a86457c517568e9dcad6081a5cf6db"
+    },
+    {
+      "path": "test_codex_art.py",
+      "bytes": 6830,
+      "sha256": "3845fca549d43e0fc648f6f0bf4768dd92c433c09b319c9b9e9b042e2dbe160b"
+    },
+    {
+      "path": "test_deepseek_recipe.py",
+      "bytes": 4789,
+      "sha256": "1f4f4ab0ec6eeb4d53a75482b32053fafdaa1adf7878f48cfe721664ee53266f"
+    },
+    {
+      "path": "test_diagnose_recognition.py",
+      "bytes": 723,
+      "sha256": "cf963b2962290ccc7751ecd7dcf7f81129285c71422c86267b98166c4aabff12"
+    },
+    {
+      "path": "test_evidence_repair.py",
+      "bytes": 2577,
+      "sha256": "eff0135b680eb50dc32d3c0784a8d1904ea4098c23fa2bc7a34c81e04e292fe3"
+    },
+    {
+      "path": "test_extract_frames.py",
+      "bytes": 2732,
+      "sha256": "b7d5dddb88d7cf41765adf874a9466ede8c6510dce914205dab65d3230680a22"
+    },
+    {
+      "path": "test_note_link.py",
+      "bytes": 1241,
+      "sha256": "81e086b5637e59fa2255f426ae4c2772d17faf35cca8997dfd402c4f6900707a"
+    },
+    {
+      "path": "test_note_status.py",
+      "bytes": 1862,
+      "sha256": "99ba91652dbb34550843d208202194051b133a0d2d91b68a5b4520d92853b669"
+    },
+    {
+      "path": "test_packaging_filter.py",
+      "bytes": 1182,
+      "sha256": "5c4e1ee374fbf2ca1313af73970fdeda9ba791958dce6293d5d72bb35c3d63d8"
+    },
+    {
+      "path": "test_pipeline_optimizations.py",
+      "bytes": 6853,
+      "sha256": "934bc70c1a927c268732fcc8c6957762736637a752dc3c671038c52563d11e0e"
+    },
+    {
+      "path": "test_pipeline_resume.py",
+      "bytes": 3243,
+      "sha256": "2b2a6fe94eb971640a37d0fd38af5e09a548fbfee14b00ce7812627876ed22ee"
+    },
+    {
+      "path": "test_recipe_quality.py",
+      "bytes": 655,
+      "sha256": "05231da6fc65c3ce3598437377dd4e85c50e576dc0f5924bcac476af3addd9eb"
+    },
+    {
+      "path": "test_render_recipe.py",
+      "bytes": 2653,
+      "sha256": "3b0dc3b6fc42978b9351697de65f5bb12845e81bd6d405c546453ce2e273ffa5"
+    },
+    {
+      "path": "test_review_cycle.py",
+      "bytes": 2445,
+      "sha256": "05465baccb3dcd6feefdd4108cbcd14d4cf32ac1abf3f4e50e26149186ff30a6"
+    },
+    {
+      "path": "test_task_queue.py",
+      "bytes": 3629,
+      "sha256": "6ba1c633c9d74b2c9d7cb0000a5ddd9cd2f39a1de72743df137b648f014c39fe"
+    },
+    {
+      "path": "test_video_post_body.py",
+      "bytes": 1383,
+      "sha256": "f8ee0eee9aecc3c211198b69a5dad973c4fa7b10f4212c815919dd75ceb09b20"
+    },
+    {
+      "path": "test_video_recipe.py",
+      "bytes": 10162,
+      "sha256": "0c41fea99628553fd3967b4bb2b8646a0409054d177b343cea61c0d2fea754d6"
+    },
+    {
+      "path": "tests-js/test_autoconnect_motion.cjs",
+      "bytes": 2567,
+      "sha256": "806c7317a9621a778e89e7bd62014cf6e47f2342a60d0cae758f837c083b212f"
+    },
+    {
+      "path": "tests-js/test_current_job.cjs",
+      "bytes": 1500,
+      "sha256": "5ce7b559ef75c88f1e01005902e5e58713e3e353168d871098a19c4c77d3c128"
+    },
+    {
+      "path": "tests-js/test_refresh_race.cjs",
+      "bytes": 1388,
+      "sha256": "b1804c0725a8833cfb65324ceaf7e8bd448827e1cc32d4ccadcbdfb702399a33"
+    },
+    {
+      "path": "video_recipe.py",
+      "bytes": 27554,
+      "sha256": "46597912196fdd08c94a18b6177a7390c258749c9fc4372449735a836e4e7aa1"
+    },
+    {
+      "path": "visual_style.css",
+      "bytes": 1516,
+      "sha256": "ca280c9bf433eaa65c4daa6022eab1c8221a1191bdce2d69e14bc7dad98e8cb1"
+    },
+    {
+      "path": "wrangler.example.json",
+      "bytes": 451,
+      "sha256": "e9718fbd3b12b7fda47e1ece52c18e1a6c6243da298d29a020a809beaa85c08e"
+    }
+  ]
+}

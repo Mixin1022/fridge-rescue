@@ -1,0 +1,7 @@
+{
+  "allowed_origins": [
+    "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev"
+  ],
+  "host": "127.0.0.1",
+  "port": 8080
+}

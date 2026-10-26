@@ -1,0 +1,26 @@
+# Local runtime, private content and credentials
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+work/
+.wrangler/
+.vscode/
+node_modules/
+*.sqlite*
+*.db
+*.log
+*.zip
+art-task/
+local-videos/
+recipe-library.json
+index.html
+recipe-preview.html
+cloudflare-pages/
+wrangler-auto-address.json
+cookies*.txt
+*_cookies.json
+.DS_Store

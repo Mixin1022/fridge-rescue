@@ -1,0 +1,52 @@
+/* Airy pen-and-wash stationery; keep all existing interaction hooks. */
+body{background:#faf9f5;color:#52616a;font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+header{max-width:850px;padding:28px 25px;border-bottom:1px solid #ebe9df}
+.brand{font:24px/1.2 Georgia,"STKaiti",serif;letter-spacing:-.04em;color:#526a79}
+.brand small{font:10px/2 sans-serif;letter-spacing:.16em;color:#8e9da5}
+header button{border:0;border-radius:30px;background:#eaf1f6;padding:9px 15px}
+main{max-width:760px;padding-top:30px}
+.intro{margin:0 0 22px}.intro small{font:10px/2 Georgia,serif;letter-spacing:.24em;color:#91a6b2}
+.intro h1{font:32px/1.55 "STKaiti","KaiTi",serif;letter-spacing:.04em;margin:8px 0}
+.intro p{font-size:12px;line-height:2;color:#94958a}
+.mascot-hero{display:block;width:min(100%,500px);height:auto;aspect-ratio:3/2;object-fit:contain;margin:0 auto 8px;mix-blend-mode:multiply}
+.portal,.portal:nth-of-type(2){grid-template-columns:1fr auto;transform:none;border:0;border-radius:22px;padding:26px 30px;margin:16px 0;background:#eaf2f7;box-shadow:none;min-height:145px}
+.portal:nth-of-type(2){background:#f0f4f7}.portal:before,.paper:before{display:none}
+.portal .number{font:10px/1.8 Georgia,serif;letter-spacing:.15em;color:#8da4b2}
+.portal h2{font:27px/1.4 "STKaiti","KaiTi",serif;margin:7px 0;color:#536a79}
+.portal p{font-size:12px;line-height:1.9;max-width:320px}.portal .enter{border:0;margin-top:11px;font-size:11px;color:#829caa}
+.portal-art{width:100px;opacity:.7}.portal-art .watercolor-art{width:95px;height:100px}.portal-art .watercolor-art:last-child{display:none}
+.journey{margin:26px 0 0;font-size:10px;letter-spacing:.08em}
+.paper,.recipe-strip,.recipe-strip:nth-child(even){transform:none;border:1px solid #e8e8dc;border-radius:18px;box-shadow:none;background:#fffef9}
+.recipe-strip:nth-child(even){background:#eff5f8}.primary{background:#dbeaf3;border-color:#dbeaf3;border-radius:30px}
+button,input,select{border-color:#dce5eb}button:hover{background:#e5eff6}
+footer{font:11px/2 "STKaiti","KaiTi",serif;letter-spacing:.13em;color:#9eafb9}
+@media(max-width:580px){header{padding:21px 20px}.brand{font-size:21px}header button{font-size:10px;padding:8px 12px}main{padding:24px 20px 40px}.intro h1{font-size:27px}.mascot-hero{width:100%;max-width:390px;margin-top:-5px}.portal,.portal:nth-of-type(2){padding:23px 22px;min-height:135px;grid-template-columns:1fr 65px}.portal h2{font-size:25px}.portal-art{width:65px}.portal-art .watercolor-art{width:67px;height:85px}.portal p{font-size:11px}.intro p{font-size:11px}}
+
+.inner-scene{display:block;width:280px;height:220px;max-width:100%;margin:-20px auto 2px;mix-blend-mode:multiply}
+#fridge>.page-title,#collect>.page-title,#fridge>.subtitle,#collect>.subtitle{text-align:center}
+.flow{padding:12px 8px;border-top:1px solid #dce7ec;border-bottom:1px solid #dce7ec;color:#8295a0}
+.paper{background:linear-gradient(115deg,#fdfefa,#f1f7fa);border-radius:8px 22px 12px 18px}
+.paper h3,.result-head h3{color:#586f7a;font-family:"STKaiti","KaiTi",serif}
+input,select{background:#fffefa;border-radius:9px;border:1px solid #d9e5ec}
+.chips .chip{background:#e8f1f6;border-color:#d9e7ef;color:#607b8b}
+.photo,.import{background:#f9fcfd;border-color:#bdcfd9;border-radius:14px;color:#7b929f}
+.recipe-strip{border-radius:5px 16px 8px 13px!important;padding:24px!important}
+.recipe-strip h4{color:#586e78}.recipe-strip p{line-height:1.9}
+.back{border:0;color:#8298a5}.empty{border-color:#d7e3e9;border-radius:13px;background:#f4f8fa}
+.primary{font-family:"STKaiti","KaiTi",serif;font-size:16px}
+@media(max-width:580px){.inner-scene{width:235px;height:180px;margin:-15px auto 0}.flow{font-size:10px}.paper{margin-top:20px}}
+
+/* Quiet European watercolor palette, clean paper and mist-blue accents. */
+body{background:#faf9f5;color:#606c73}.portal,.portal:nth-of-type(2){background:#edf2f4}.portal:nth-of-type(2){background:#f1f2f0}.paper{background:#fdfcf8}.flow{border-color:#e3e8e9}.primary{background:#dfe9ed;color:#617580}button:hover{background:#e9eff1}.mascot-hero,.inner-scene{filter:none;opacity:1}
+
+/* User-selected full portrait: preserve its composition without cropping. */
+.mascot-hero{width:min(100%,420px);aspect-ratio:auto;height:auto;object-fit:contain;mix-blend-mode:normal;border-radius:8px;margin:18px auto 28px}.portal{background:#e9eef4}.portal:nth-of-type(2){background:#f2ece2}.brand,.intro h1,.page-title{color:#66758b}.primary{background:#dfe7f1;color:#65758b}.inner-scene{background:#fbfaf6;border-radius:12px}@media(max-width:580px){.mascot-hero{width:100%;max-width:360px;margin:12px auto 23px}}
+
+/* Separate original interior scenes matched to the selected kitchen artwork. */
+.inner-scene{width:min(100%,520px);height:auto;aspect-ratio:3/2;object-fit:contain;mix-blend-mode:normal;border-radius:8px;margin:0 auto 24px}@media(max-width:580px){.inner-scene{width:100%;height:auto;margin:0 auto 20px}}
+
+.motion-hero{width:min(100%,420px);margin:18px auto 26px;position:relative}.motion-hero img,.motion-hero canvas{display:block;width:100%;height:auto;border-radius:8px}.motion-hero [hidden]{display:none!important}.motion-hero button{display:block;margin:10px auto 3px;font-size:11px;padding:6px 14px;background:#eef3f7}.motion-hero small{display:block;text-align:center;color:#93a1ac;font-size:10px}
+
+.sleep-bubbles{position:absolute;left:25%;top:76%;width:38px;height:65px;pointer-events:none}.sleep-bubbles i{position:absolute;bottom:0;left:0;width:8px;height:8px;border:1px solid #b1c5d5;border-radius:50%;background:#f4f8fb55;animation:sleepbubble 4.8s ease-out infinite;opacity:0}.sleep-bubbles i:nth-child(2){animation-delay:1.6s;width:12px;height:12px}.sleep-bubbles i:nth-child(3){animation-delay:3.2s;width:6px;height:6px}@keyframes sleepbubble{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:.65}80%{opacity:.3}100%{opacity:0;transform:translate(14px,-45px) scale(1.1)}}@media(prefers-reduced-motion:reduce){.sleep-bubbles{display:none}}
+
+.video-hero{width:min(100%,420px);margin:18px auto 26px}.video-hero video{width:100%;height:auto;aspect-ratio:3/4;display:block;object-fit:contain;border-radius:8px;background:#f8f5ee}.video-hero button{display:block;margin:10px auto;font-size:11px;padding:7px 15px;background:#eef3f7}
